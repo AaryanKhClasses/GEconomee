@@ -24,9 +24,9 @@ module.exports = {
             `:spy: **Crime:** Do bad deeds and earn GCoins. :name_badge: *CAUTION:* You might lose GCoins too if you got arrested!\n` +
             `:coin: **Daily:** Earn your daily rewards from 500 GCoins to 1300 GCoins!\n` + 
             `:joystick: **Gamble:** Gamble your earned GCoins! Beeware! Your GCoins may get __Doubled__ or __Halved__\n` + 
-            `:trophy: **Leaderboard:** See Global Leaderboard and what you are against!\n` + 
+            `:trophy: **Leaderboard:** See Global Leaderboard and who you are against!\n` + 
             `:moneybag: **Pay:** Pay some GLoans or gift your friends some GCoins!\n` + 
-            `:ninja: **Rob:** Rob other players for 1000 GCoins every day! But you could get caughta nd be fined 1000 GCoins!`)
+            `:ninja: **Rob:** Rob other players for 1000 GCoins every day! But you could get caught and be fined 1000 GCoins!`)
             message.channel.send(embed)
         } else if(args[0] === 'moderation' || args[0] === 'Moderation' || args[0] === 'MODERATION'){
             const embed = new MessageEmbed()
@@ -44,6 +44,7 @@ module.exports = {
             `:hammer: **Soft-Ban:** Bans and immediately unbans a member!\n` +
             `:anger: **Warn:** Warns a member! The more warns, the higher punishment!\n` +
             `:hotsprings: **Clear-Warns:** Clear warnings of a member!\n` +
+            `:: **List-Warns:** List the warnings of a member\n` + 
             `:white_check_mark: **Usage for all Commands:** [command name] [mentioned user] (optional reason)`
             )
             message.channel.send(embed)
