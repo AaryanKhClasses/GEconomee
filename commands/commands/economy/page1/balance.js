@@ -1,4 +1,4 @@
-const { MessageEmbed } = require('discord.js')
+const Discord = require('discord.js')
 const db = require('quick.db')
 
 module.exports = {
@@ -15,7 +15,7 @@ module.exports = {
         }
 
         if(user.bot || user === client.user){
-            const embed = new MessageEmbed()
+            const embed = new Discord.MessageEmbed()
             .setDescription(`<:emojino:779190801598775317> Sorry! The mentioned user is a bot and bots cannot have GCoins!`)
             .setColor('RED')
             .setFooter('GEconomee')
@@ -27,9 +27,13 @@ module.exports = {
         if(!balance) balance = 0
         else balance = balance
 
-        const embed = new MessageEmbed()
+        let bank = db.get(`account.${user.id}.bank`)
+        if(!bank) bank = 0
+        else bank = bank
+
+        const embed = new Discord.MessageEmbed()
         .setAuthor(`${user.tag}`, user.displayAvatarURL())
-        .setDescription(`<:emojiyes:779190801392861224> **GCoins balance:** ${(balance).toLocaleString()} GCoins!`)
+        .setDescription(`<:emojiyes:779190801392861224> **GCoins balance:** ${(balance).toLocaleString()} GCoins!\n<:emojiyes:779190801392861224> **GCoins Bank:** ${(bank).toLocaleString()}`)
         .setColor('GREEN')
         .setFooter('GEconomee')
         .setTimestamp(new Date())
