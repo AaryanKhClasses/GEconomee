@@ -12,31 +12,31 @@ client.on('ready', () => {
     client.user.setActivity(`${prefix}help`, {type: 'LISTENING'}).catch(console.error)
 
     loadCommands(client)
-    loadFeatures(client)
+    // loadFeatures(client)
 })
 
-client.on('message', async(message) => {
-    message.guild.channels.create('mod-logs', { type: text }) //mod-logs
+// client.on('message', async(message) => {
+//     message.guild.channels.create('mod-logs', { type: text }) //mod-logs
 
-    //muted
-    let mutedRole = message.guild.roles.cache.find(r => r.name === 'Muted')
-    if(!mutedRole){
-        mutedRole = await message.guild.roles.create({
-            data: {
-                name: 'Muted',
-                color: '#000000',
-                permissions: []
-            }}
-        )
+//     //muted
+//     let mutedRole = message.guild.roles.cache.find(r => r.name === 'Muted')
+//     if(!mutedRole){
+//         mutedRole = await message.guild.roles.create({
+//             data: {
+//                 name: 'Muted',
+//                 color: '#000000',
+//                 permissions: []
+//             }}
+//         )
 
-        message.guild.channels.cache.forEach(async(channel) => {
-            await channel.createOverwrite(mutedRole, {
-                SEND_MESSAGES: false,
-                MANAGE_MESSAGES: false,
-                ADD_REACTIONS: false
-            })
-        })
-    }
-})
+//         message.guild.channels.cache.forEach(async(channel) => {
+//             await channel.createOverwrite(mutedRole, {
+//                 SEND_MESSAGES: false,
+//                 MANAGE_MESSAGES: false,
+//                 ADD_REACTIONS: false
+//             })
+//         })
+//     }
+// })
 
 client.login(token)
