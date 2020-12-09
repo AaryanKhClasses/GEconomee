@@ -6,12 +6,16 @@ module.exports = {
     callback: (message, args) => {
         if(message.author.id === '639352891018051584'){
             let user
+            let amount
+
             if(message.mentions.users.first()){
                 user = message.mentions.users.first()
+                amount = parseInt(args[1])
             } else{
                 user = message.author
+                amount = parseInt(args[0])
             }
-            let amount = parseInt(args[0])
+            
 
             db.add(`account.${user.id}.balance`, amount)
             const embed = new Discord.MessageEmbed()

@@ -8,9 +8,9 @@ module.exports = {
         const item = args.join(' ')
         const balance = await db.get(`account.${message.author.id}.balance`)
         const items = await db.fetch(`inventory.${message.author.id}.${{ items: [] }}`)
-        if(item === 'Test Item1'){
+        if(item === 'Apple' || item === 'apple'){
 
-            if(balance < 500) {
+            if(balance < 10) {
                 const embed = new MessageEmbed()
                 .setDescription(`<:emojino:779190801598775317> You do not have enough GCoins to buy **${item}**! Check your wallet or withdraw from bank!`)
                 .setAuthor(`${message.author.tag}`, message.author.displayAvatarURL())
@@ -19,10 +19,10 @@ module.exports = {
                 .setTimestamp()
                 message.channel.send(embed)
             } else {
-                await db.subtract(`account.${message.author.id}.balance`, 500)
-                await db.push(`inventory.${message.author.id}`, 'Test Item1')
+                await db.subtract(`account.${message.author.id}.balance`, 10)
+                await db.push(`inventory.${message.author.id}`, ':apple: **Apple**\nID:\`apple\` Buy: 10 GCoins | Sell: 0 GCoins \nEat An Apple Everyday, Keep The Doctor Away!')
                 const embed = new MessageEmbed()
-                .setDescription(`<:emojiyes:779190801392861224> Successfully purchased **${item}**, it costed you 500 GCoins!`)
+                .setDescription(`<:emojiyes:779190801392861224> Successfully purchased **${item}**, it costed you 10 GCoins!`)
                 .setAuthor(`${message.author.tag}`, message.author.displayAvatarURL())
                 .setColor('GREEN')
                 .setFooter('GEconomee')
@@ -30,9 +30,9 @@ module.exports = {
                 message.channel.send(embed)
             }
 
-        } else if(item === 'Test Item2'){
+        } else if(item === 'Banana' || item === 'banana'){
 
-            if(balance < 1000) {
+            if(balance < 25) {
                 const embed = new MessageEmbed()
                 .setDescription(`<:emojino:779190801598775317> You do not have enough GCoins to buy **${item}**! Check your wallet or withdraw from bank!`)
                 .setAuthor(`${message.author.tag}`, message.author.displayAvatarURL())
@@ -41,10 +41,98 @@ module.exports = {
                 .setTimestamp()
                 message.channel.send(embed)
             } else {
-                await db.subtract(`account.${message.author.id}.balance`, 1000)
-                await db.push(`inventory.${message.author.id}`, 'Test Item2')
+                await db.subtract(`account.${message.author.id}.balance`, 25)
+                await db.push(`inventory.${message.author.id}`, ':banana: **Banana**\nID:\`banana\` Buy: 25 GCoins | Sell: 0 GCoins\nDont Slip On It!')
                 const embed = new MessageEmbed()
-                .setDescription(`<:emojiyes:779190801392861224> Successfully purchased **${item}**, it costed you 1000 GCoins!`)
+                .setDescription(`<:emojiyes:779190801392861224> Successfully purchased **${item}**, it costed you 25 GCoins!`)
+                .setAuthor(`${message.author.tag}`, message.author.displayAvatarURL())
+                .setColor('GREEN')
+                .setFooter('GEconomee')
+                .setTimestamp()
+                message.channel.send(embed)
+            }
+
+        } else if(item === 'Scooter' || item === 'scooter'){
+
+            if(balance < 575) {
+                const embed = new MessageEmbed()
+                .setDescription(`<:emojino:779190801598775317> You do not have enough GCoins to buy **${item}**! Check your wallet or withdraw from bank!`)
+                .setAuthor(`${message.author.tag}`, message.author.displayAvatarURL())
+                .setColor('RED')
+                .setFooter('GEconomee')
+                .setTimestamp()
+                message.channel.send(embed)
+            } else {
+                await db.subtract(`account.${message.author.id}.balance`, 575)
+                await db.push(`inventory.${message.author.id}`, ':motor_scooter: **Scooter**\nID: \`scooter\` Buy: 575 GCoins | Sell: 0 GCoins\nBuy a Scooter an go on a LONG Drive!')
+                const embed = new MessageEmbed()
+                .setDescription(`<:emojiyes:779190801392861224> Successfully purchased **${item}**, it costed you 575 GCoins!`)
+                .setAuthor(`${message.author.tag}`, message.author.displayAvatarURL())
+                .setColor('GREEN')
+                .setFooter('GEconomee')
+                .setTimestamp()
+                message.channel.send(embed)
+            }
+
+        } else if(item === 'Laptop' || item === 'laptop'){
+
+            if(balance < 949) {
+                const embed = new MessageEmbed()
+                .setDescription(`<:emojino:779190801598775317> You do not have enough GCoins to buy **${item}**! Check your wallet or withdraw from bank!`)
+                .setAuthor(`${message.author.tag}`, message.author.displayAvatarURL())
+                .setColor('RED')
+                .setFooter('GEconomee')
+                .setTimestamp()
+                message.channel.send(embed)
+            } else {
+                await db.subtract(`account.${message.author.id}.balance`, 949)
+                await db.push(`inventory.${message.author.id}`, ':laptop: **Laptop**\nID: \`laptop\` Buy: 949 GCoins | Sell: 0 GCoins\nPlay Games, Play Music, Code and do Other Things on this Laptop!')
+                const embed = new MessageEmbed()
+                .setDescription(`<:emojiyes:779190801392861224> Successfully purchased **${item}**, it costed you 949 GCoins!`)
+                .setAuthor(`${message.author.tag}`, message.author.displayAvatarURL())
+                .setColor('GREEN')
+                .setFooter('GEconomee')
+                .setTimestamp()
+                message.channel.send(embed)
+            }
+
+        } else if(item === 'Blue Car' || item === 'blue car' || item === 'blue_car' || item === 'car blue' || item === 'car_blue'){
+
+            if(balance < 2500) {
+                const embed = new MessageEmbed()
+                .setDescription(`<:emojino:779190801598775317> You do not have enough GCoins to buy **${item}**! Check your wallet or withdraw from bank!`)
+                .setAuthor(`${message.author.tag}`, message.author.displayAvatarURL())
+                .setColor('RED')
+                .setFooter('GEconomee')
+                .setTimestamp()
+                message.channel.send(embed)
+            } else {
+                await db.subtract(`account.${message.author.id}.balance`, 2500)
+                await db.push(`inventory.${message.author.id}`, ':blue_car: **Blue Car**\nID: \`car_blue\` Buy: 2500 GCoins | Sell: 0 GCoins\nGo On a Long Drive In This Blue Car!')
+                const embed = new MessageEmbed()
+                .setDescription(`<:emojiyes:779190801392861224> Successfully purchased **${item}**, it costed you 2500 GCoins!`)
+                .setAuthor(`${message.author.tag}`, message.author.displayAvatarURL())
+                .setColor('GREEN')
+                .setFooter('GEconomee')
+                .setTimestamp()
+                message.channel.send(embed)
+            }
+
+        } else if(item === 'Red Car' || item === 'red car' || item === 'red_car' || item === 'car red' || item === 'car_red'){
+
+            if(balance < 2500) {
+                const embed = new MessageEmbed()
+                .setDescription(`<:emojino:779190801598775317> You do not have enough GCoins to buy **${item}**! Check your wallet or withdraw from bank!`)
+                .setAuthor(`${message.author.tag}`, message.author.displayAvatarURL())
+                .setColor('RED')
+                .setFooter('GEconomee')
+                .setTimestamp()
+                message.channel.send(embed)
+            } else {
+                await db.subtract(`account.${message.author.id}.balance`, 2500)
+                await db.push(`inventory.${message.author.id}`, ':red_car: **Red Car**\nID: \`car_red\` Buy: 2500 GCoins | Sell: 0 GCoins\nGo On a Long Drive In This Red Car!')
+                const embed = new MessageEmbed()
+                .setDescription(`<:emojiyes:779190801392861224> Successfully purchased **${item}**, it costed you 2500 GCoins!`)
                 .setAuthor(`${message.author.tag}`, message.author.displayAvatarURL())
                 .setColor('GREEN')
                 .setFooter('GEconomee')

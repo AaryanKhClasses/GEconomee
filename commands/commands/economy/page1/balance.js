@@ -4,12 +4,10 @@ const db = require('quick.db')
 module.exports = {
     commands: ['balance', 'bal'],
     cooldown: 10,
-    callback: (message, args, client) => {
+    callback: (message, client) => {
         let user
         if(message.mentions.users.first()){
             user = message.mentions.users.first()
-        } else if(args[0]){
-            user = message.guild.members.cache.get(args[0]).user
         } else {
             user = message.author
         }
