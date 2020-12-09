@@ -18,6 +18,7 @@
   },
   "_moduleAliases": {
     "@root": ".",
-    "@commands": "./commands/commands"
+    "@commands": "./commands/commands",
+    "@features": "./features/features"
   }
 }
