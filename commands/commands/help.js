@@ -10,7 +10,11 @@ module.exports = {
             .setFooter('GEconomee')
             .setColor('#FEAD40')
             .setTimestamp()
-            .setDescription('I am a **__Global-Economy__** Bot! I have __economy__ and __moderation__ features. Below are my categories.\nType in ```js\n!!help <category>``` for complete category information!\n\n:coin: **Economy:** __Global Economy__ Global Economy means your GCoins will be synced in every server!\n\n:shield: **Moderation:** Moderation Commands like __Kick__, __Ban__ and __Mute__ + **Auto Mod Feature**')
+            .setDescription(`I am a **__Global-Economy__** Bot! I have __economy__ and __moderation__ features. Below are my categories.\n` +
+            `Type in \`\`\`js\n!!help <category>\`\`\` for complete category information!\n\n` +
+            `:coin: **Economy:** __Global Economy__ Global Economy means your GCoins will be synced in every server!\n\n` +
+            `:shield: **Moderation:** Moderation Commands like __Kick__, __Ban__ and __Mute__ + **Auto Mod Feature**\n\n` + 
+            `**Extras:** help, info, news, ping`)
             message.channel.send(embed)
         } else if(args[0] === 'economy' || args[0] === 'Economy' || args[0] === 'ECONOMY'){
 
@@ -63,8 +67,8 @@ module.exports = {
                 `:shopping_cart: **Store:** Explore the vast valuable item collection from the GStore and buy stuff by \`!!buy\`!\n` + 
                 `:tickets: **Buy:** Buy Items from the GStore for a price of GCoins!\n` + 
                 `:purse: **Inventory:** Your newly purchased items as well as other items will be shown here, so you can showoff your friends!\n\n` +
-                // 
-                `:white_check_mark: **Usage for all Commands:** [command name] [GCoins]`)
+                //
+                ``)
                 message.channel.send(eTwEmbed)
             }
             

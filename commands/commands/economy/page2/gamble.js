@@ -47,13 +47,13 @@ module.exports = {
             return message.channel.send(embed)
         }
         
-        let cooldown = 25000
+        let cooldown = 13000
         let pad_zero = num => (num < 10 ? '0': '')
         let lastGamble = await db.get(`lastGamble.${message.author.id}`)
 
         if(lastGamble !== null && cooldown - (Date.now() - lastGamble) > 0){
             let timeObj = ms(cooldown - (Date.now() - lastGamble))
-            let second = pad_zero(timeObj.second).padStart(2, '0')
+            let second = pad_zero(timeObj.seconds).padStart(2, '0')
             const embed = new Discord.MessageEmbed()
             .setAuthor(`${message.author.tag}`, message.author.displayAvatarURL())
             .setDescription(`<:emojino:779190801598775317> You are gambling too fast! Please wait **${second}** second(s) before gambling again!`)
