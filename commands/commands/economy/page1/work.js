@@ -10,8 +10,6 @@ module.exports = {
         let pad_zero =  num => (num < 10 ? '0': '') + num
         let cooldown = 1.44e+7 //0
 
-        let amount
-        if(db.has(`pet.${message.author.id}.`))
         let min = 200
         let max = 500
         let amount = Math.floor(Math.random() * (max - min + 1)) + min
