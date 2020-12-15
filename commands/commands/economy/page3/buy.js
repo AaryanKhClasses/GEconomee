@@ -140,6 +140,28 @@ module.exports = {
                 message.channel.send(embed)
             }
 
+        } else if(item === 'Chicken' || item === 'chicken'){
+
+            if(balance < 20000) {
+                const embed = new MessageEmbed()
+                .setDescription(`<:emojino:779190801598775317> You do not have enough GCoins to buy **${item}**! Check your wallet or withdraw from bank!`)
+                .setAuthor(`${message.author.tag}`, message.author.displayAvatarURL())
+                .setColor('RED')
+                .setFooter('GEconomee')
+                .setTimestamp()
+                message.channel.send(embed)
+            } else {
+                await db.subtract(`account.${message.author.id}.balance`, 20000)
+                await db.set(`pet.${message.author.id}`, ':chicken: **Chicken**\nID: \`chicken_pt2\` Buy: 20000 GCoins | Sell: 0 GCoins\nChicken Lays Eggs!\nSpecial Effect: **Money+%:** 5%')
+                const embed = new MessageEmbed()
+                .setDescription(`<:emojiyes:779190801392861224> Successfully purchased **${item}**, it costed you 20000 GCoins!`)
+                .setAuthor(`${message.author.tag}`, message.author.displayAvatarURL())
+                .setColor('GREEN')
+                .setFooter('GEconomee')
+                .setTimestamp()
+                message.channel.send(embed)
+            }
+
         } else if(!item){
             const embed = new MessageEmbed()
             .setDescription(`<:emojino:779190801598775317> Please specify an item to purchase! See **!!store** for all items!`)

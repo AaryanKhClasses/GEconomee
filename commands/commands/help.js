@@ -12,11 +12,12 @@ module.exports = {
             .setTimestamp()
             .setDescription(`I am a **__Global-Economy__** Bot! I have __economy__ and __moderation__ features. Below are my categories.\n` +
             `Type in \`\`\`js\n!!help <category>\`\`\` for complete category information!\n\n` +
-            `:coin: **Economy:** __Global Economy__ Global Economy means your GCoins will be synced in every server!\n\n` +
+            `:coin: **Economy:** __Global Economy__ Global Economy means your GCoins will be synced in every server!\n` +
+            `:dog: **Pets (Experimental):** Pets will help you in your __adventure__ of becoming the **richest**! They give you **special perks and other buffs** too!\n\n` + 
             `:shield: **Moderation:** Moderation Commands like __Kick__, __Ban__ and __Mute__ + **Auto Mod Feature**\n\n` + 
             `**Extras:** help, info, news, ping`)
             message.channel.send(embed)
-        } else if(args[0] === 'economy' || args[0] === 'Economy' || args[0] === 'ECONOMY'){
+        } else if(args[0] === 'economy'){
 
             if(!args[1] || args[1] === '1'){
                 const eOEmbed = new MessageEmbed()
@@ -66,13 +67,13 @@ module.exports = {
                 `:outbox_tray: **WithDraw:** Withdraw a specific amount of GCoins or all GCoins from the bank!\n` + 
                 `:shopping_cart: **Store:** Explore the vast valuable item collection from the GStore and buy stuff by \`!!buy\`!\n` + 
                 `:tickets: **Buy:** Buy Items from the GStore for a price of GCoins!\n` + 
-                `:purse: **Inventory:** Your newly purchased items as well as other items will be shown here, so you can showoff your friends!\n\n` +
-                //
+                `:purse: **Inventory:** Your newly purchased items as well as other items will be shown here, so you can showoff your friends!\n` +
+                ` **Use:** You can use some items in your inventory! Check it and find out which items are usable!\n\n` +
                 ``)
                 message.channel.send(eTwEmbed)
             }
             
-        } else if(args[0] === 'moderation' || args[0] === 'Moderation' || args[0] === 'MODERATION'){
+        } else if(args[0] === 'moderation'){
             const embed = new MessageEmbed()
             .setTitle('!!help moderation command')
             .setFooter('GEconomee')
@@ -93,6 +94,17 @@ module.exports = {
             
             `:white_check_mark: **Usage for all Commands:** [command name] [mentioned user] (optional reason)`
             )
+            message.channel.send(embed)
+        } else if(args[0] === 'pets'){
+            const embed = new MessageEmbed()
+            .setTitle('!!help pets command')
+            .setFooter('GEconomee')
+            .setColor('#FEAD40')
+            .setTimestamp()
+            .setDescription(`:dog: **Pets (Experimental):** Pets will help you in your __adventure__ of becoming the **richest**! They give you **special perks and other buffs** too!\n\n` + 
+            `:hugging: **Claim-Pet:** Claim your first pet! This pet won't do anything! But you can upgrade it so that it gives you perks!\n` +
+            `:cat: **Pet:** See your or your friend's pets!\n` +
+            `:convenience_store: **Pet-Shop:** IMPORTANT: This is NOT a new command! Type in **!!store pets** to access the Pet Shop!\n`)
             message.channel.send(embed)
         } else {
             const embed = new MessageEmbed()

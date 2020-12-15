@@ -17,7 +17,7 @@ module.exports = {
             .setTimestamp()
             .setColor('GREEN')
             message.channel.send(embed)
-        } else{
+        } else if(args[0] === '2'){
             const embed = new MessageEmbed()
             .setTitle('Type `!!buy [item name]` to buy')
             .setDescription(
@@ -29,6 +29,27 @@ module.exports = {
             .setTimestamp()
             .setColor('GREEN')
             message.channel.send(embed)
+        } else if(args[0] === 'pets'){
+            const embed = new MessageEmbed()
+            .setTitle('Type `!!buy [item name]` to buy')
+            .setDescription(
+                `**:chicken: Chicken(Pet Tier2)**\nID: \`chicken_pt2\` Required: 20000 GCoins\nChicken lays eggs!\nSpecial Effect: **Money+%:** 5% \n\n` + 
+                `**:pig: Pig(Pet Tier3)**\nID: \`pig_pt3\` Required: 50000 GCoins\nThis pig likes to play in mud and Oinks a LOT!\nSpecial Effect: **Money+%:** 15%\n\n` + 
+                `**More Items Coming Soon!**\n\n`
+            )
+            .setFooter('Pet Shop Page 1/1 | GEconomee')
+            .setTimestamp()
+            .setColor('GREEN')
+            message.channel.send(embed)
+        } else {
+            const embed = new MessageEmbed()
+            .setTitle('Type `!!buy [item name]` to buy')
+            .setDescription(`<:emojino:779190801598775317> Sorry! We don't have a shop page called **${args[0]}**`)
+            .setFooter('Shop | GEconomee')
+            .setTimestamp()
+            .setColor('GREEN')
+            message.channel.send(embed)
         }
     }
 }
+

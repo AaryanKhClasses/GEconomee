@@ -22,7 +22,7 @@ module.exports = {
         let arr = []
 
         for(var i in list){
-            arr.push(`**${i * 1 + 1 + fromPages}.** ${message.guild.members.cache.get(list[i][0]) ? message.guild.members.cache.get(list[i][0]).user.tag : "UnknownUser"} - GCoins: **${`${list[i][1].balance}` + `${list[i][1].bank}`}**`)
+            arr.push(`**${i * 1 + 1 + fromPages}.** ${message.guild.members.cache.get(list[i][0]) ? message.guild.members.cache.get(list[i][0]).user.tag : "UnknownUser"} - GCoins: **${(parseInt(`${list[i][1].balance}`) ? parseInt(`${list[i][1].bank}`) : '') + (parseInt(`${list[i][1].bank}`) ? parseInt(`${list[i][1].balance}`) : '')}**`)
         }
 
         const embed = new Discord.MessageEmbed()

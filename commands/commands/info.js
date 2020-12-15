@@ -1,7 +1,7 @@
 const Discord = require("discord.js")
 const client = new Discord.Client()
-const { prefix } = require('@root/config.json')
-const { version } = require('@root/package.json')
+const { prefix } = require('../../config.json')
+const { version } = require('../../package.json')
 
 function uptime(time) {
     let Seconds = Math.floor(time / 1000)

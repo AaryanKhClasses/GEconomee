@@ -1,5 +1,5 @@
 const { MessageEmbed } = require('discord.js')
-const { bannedWords } = require('@root/json.json')
+const { bannedWords } = require('../../json.json')
 
 module.exports = (client) => {
     client.on('message', (message) => {

@@ -2,8 +2,8 @@ const Discord = require('discord.js')
 const db = require('quick.db')
 let ms = require('parse-ms')
 
-const { crimeSuccessReplies } = require('@root/json.json')
-const { crimeFailReplies } = require('@root/json.json')
+const { crimeSuccessReplies } = require('../../../../json.json')
+const { crimeFailReplies } = require('../../../../json.json')
 
 module.exports = {
     commands: 'crime',
