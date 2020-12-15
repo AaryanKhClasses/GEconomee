@@ -2,10 +2,10 @@ require('module-alias/register')
 
 const Discord = require('discord.js')
 const client = new Discord.Client()
-const { prefix, token } = require('@root/config.json')
+const { prefix, token } = require('./config.json')
 
-const loadCommands = require('@root/commands/load-commands')
-const loadFeatures = require('@root/features/load-features')
+const loadCommands = require('./commands/load-commands')
+const loadFeatures = require('./features/load-features')
 
 client.on('ready', () => {
     console.log('The Bot is Online!')
