@@ -5,11 +5,14 @@ const { prefix, token } = require('./config.json')
 const loadCommands = require('./commands/load-commands')
 const loadFeatures = require('./features/load-features')
 
+const levelling = require('./features/levelling/levelling')
+
 client.on('ready', () => {
     console.log('The Bot is Online!')
     client.user.setActivity(`${prefix}help`, {type: 'LISTENING'}).catch(console.error)
 
     loadCommands(client)
+    levelling(client)
     // loadFeatures(client)
 })
 
