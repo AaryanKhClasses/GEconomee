@@ -14,10 +14,14 @@ module.exports = (client) => {
             db.add(`levelling.level.${message.author.id}`, 1)
             let newLevel = db.get(`levelling.level.${message.author.id}`)
             db.subtract(`levelling.xp.${message.author.id}`, xpNeeded)
+            let min = 300
+            let max = 500
+            var ran = Math.floor(Math.random() * (max - min + 1)) + min
+            db.add(`account.${message.author.id}.balance`, newLevel * ran)
             const embed = new MessageEmbed()
             .setAuthor(`${message.author.tag}`, message.author.displayAvatarURL())
-            .setDescription(`<:emojiyes:779190801392861224> Yay **${message.author.tag}**! You levelled up to level **${newLevel}**`)
-            .setColor('RANDOM')
+            .setDescription(`<:emojiyes:779190801392861224> Yay **${message.author.tag}**! You levelled up to level **${newLevel}**!\nYou got **${ran}** as a levelling up Bonus`)
+            .setColor('GREEN')
             .setFooter('GEconomee')
             .setTimestamp()
             message.channel.send(embed)
